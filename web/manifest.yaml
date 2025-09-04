@@ -130,6 +130,7 @@ metadata:
   name: web
   namespace: roboshop
 spec:
+  type: LoadBalancer
   selector:
     app: web
     project: roboshop 
