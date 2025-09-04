@@ -118,22 +118,10 @@ metadata:
         project: roboshop 
         tier: web
     spec:
-    containers:
-     - name: web
-       image: raviraveen1/web:v1 
-       imagePullPolicy: Always
-       volumeMounts:
-            - name: nginx-config
-              mountPath: /etc/nginx/nginx.conf
-              subPath: nginx.conf
-              readOnly: true
-    volumes:
-      - name: nginx-config
-        configMap:
-          name: nginx-config
-          items:
-            - key: nginx.conf
-              path: nginx.conf
+      containers:
+      - name: web
+        image: raviraveen1/web:v1
+        imagePullPolicy: Always
 
 ---
 apiVersion: v1
