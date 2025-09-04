@@ -98,7 +98,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: catalogue
+  name: web
   namespace: roboshop
   labels:
     app: web
