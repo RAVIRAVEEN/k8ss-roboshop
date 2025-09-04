@@ -22,9 +22,9 @@ spec:
         tier: web
     spec:
       containers:
-        - name: web
-          image: raviraveen1/web:v1
-          imagePullPolicy: Always
+      - name: web
+        image: raviraveen1/web:v1
+        imagePullPolicy: Always
 
 
 
