@@ -104,9 +104,9 @@ metadata:
     app: web
     project: roboshop 
     tier: web
-spec:
-  replicas: 1
-  selector:
+  spec:
+   replicas: 1
+   selector:
     matchLabels:
       app: web
       project: roboshop 
@@ -118,16 +118,16 @@ spec:
         project: roboshop 
         tier: web
     spec:
-      containers:
-      - name: web
-        image: raviraveen1/web:v1 
-        imagePullPolicy: Always
-        volumeMounts:
+    containers:
+     - name: web
+       image: raviraveen1/web:v1 
+       imagePullPolicy: Always
+       volumeMounts:
             - name: nginx-config
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
               readOnly: true
-      volumes:
+    volumes:
       - name: nginx-config
         configMap:
           name: nginx-config
