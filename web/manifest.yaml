@@ -100,30 +100,30 @@ kind: Deployment
 metadata:
   name: web
   namespace: roboshop
-  labels:
+  labels: # these labels are deployment labels
     app: web
-    tier: web
     project: roboshop
+    tier: web
 spec:
   replicas: 1
   selector:
-    matchLabels:
+    matchLabels: # these labels are used to find the pods
       app: web
-      tier: web
       project: roboshop
+      tier: web
   template:
     metadata:
-      labels:
+      labels: # these labels are pod labels
         app: web
-        tier: web
         project: roboshop
+        tier: web
     spec:
       containers:
       - name: web
-        image: raviraveen1/web:v1
-
+        image: raviaveen1/web:v1
+        imagePullPolicy: Always
+      
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -133,9 +133,9 @@ spec:
   type: LoadBalancer
   selector:
     app: web
-    tier: web
     project: roboshop
+    tier: web
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
+    port: 80 #service-port
+    targetPort: 80 #container-port
