@@ -1,29 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web
+  name: mongodb
   namespace: roboshop
   labels:
-    app: web
+    app: mongodb
     project: roboshop
-    tier: web
+    tier: mongodb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web
+      app: mongodb
       project: roboshop
-      tier: web
+      tier: mongodb
   template:
     metadata:
       labels:
-        app: web
+        app: mongodb
         project: roboshop
-        tier: web
+        tier: mongodb
     spec:
       containers:
-      - name: web
-        image: raviraveen1/web:v1
+      - name: mongodb
+        image: raviraveen1/mongodb:v1
         imagePullPolicy: Always
 
 
