@@ -120,7 +120,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: raviaveen1/web:v1
+        image: raviraveen1/web:v1
         imagePullPolicy: Always
       
 ---
