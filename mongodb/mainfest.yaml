@@ -5,26 +5,27 @@ metadata:
   namespace: roboshop
   labels:
     app: web
-    project: roboshop 
+    project: roboshop
     tier: web
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: web
-      project: roboshop 
+      project: roboshop
       tier: web
   template:
     metadata:
       labels:
         app: web
-        project: roboshop 
+        project: roboshop
         tier: web
     spec:
       containers:
-      - name: web
-        image: raviraveen1/web:v1 
-        imagePullPolicy: Always
+        - name: web
+          image: raviraveen1/web:v1
+          imagePullPolicy: Always
+
 
 
 ---
