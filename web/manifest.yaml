@@ -124,20 +124,19 @@ metadata:
         imagePullPolicy: Always
 
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: web
+  name: mongodb
   namespace: roboshop
 spec:
   type: LoadBalancer
   selector:
-    app: web
+    app: mongodb
     project: roboshop 
-    tier: web
+    tier: db
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
-
-
