@@ -98,31 +98,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web
-  namespace: roboshop
+  name: frontend
+  namespace: expense
   labels:
     app: web
+    tier: frontend
     project: roboshop
-    tier: web
-spec:                         # 👈 spec is at root, NOT under metadata
+spec:
   replicas: 1
   selector:
     matchLabels:
       app: web
+      tier: frontend
       project: roboshop
-      tier: web
   template:
     metadata:
       labels:
         app: web
+        tier: frontend
         project: roboshop
-        tier: web
     spec:
       containers:
-        - name: web
-          image: raviraveen1/web:v1
-          imagePullPolicy: Always
-
+      - name: frontend
+        image: raviraveen1/web:v1
 
 ---
 
