@@ -119,7 +119,7 @@ spec:
         project: roboshop
     spec:
       containers:
-      - name: frontend
+      - name: web
         image: raviraveen1/web:v1
 
 ---
