@@ -98,7 +98,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: web
   namespace: roboshop
   labels:
     app: web
@@ -127,14 +127,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongodb
+  name: web
   namespace: roboshop
 spec:
   type: LoadBalancer
   selector:
-    app: mongodb
-    project: roboshop 
-    tier: db
+    app: web
+    tier: frontend
+    project: roboshop
   ports:
   - protocol: TCP
     port: 80
