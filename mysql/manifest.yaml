@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: roboshop
+  labels:
+    app: mysql
+    project: roboshop 
+    tier: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+      project: roboshop 
+      tier: db
+  template:
+    metadata:
+      labels:
+        app: mysql
+        project: roboshop 
+        tier: db
+    spec:
+      containers:
+      - name: mysql
+        image: raviraveen1/mysql:v2
+        imagePullPolicy: Always
+
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: roboshop
+spec:
+  selector:
+    app: mysql
+    project: roboshop 
+    tier: db
+  ports:
+  - protocol: TCP
+    port: 3306
+    targetPort: 3306
+
+
