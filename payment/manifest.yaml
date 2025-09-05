@@ -4,8 +4,8 @@ metadata:
   name: payment
 type: Opaque
 data:
- AMQP_USER : cm9ib3Nob3AK
- AMQP_PASS : cm9ib3Nob3AxMjMK
+ AMQP_USER :  cm9ib3Nob3A=
+ AMQP_PASS: cm9ib3Nob3AxMjM=
 ---
 apiVersion: apps/v1
 kind: Deployment
