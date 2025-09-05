@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: cart
-        image: raviraveen1/cart:v1 
+        image: raviraveen1/cart:v2
         imagePullPolicy: Always
         envFrom:
          - configMapRef:
