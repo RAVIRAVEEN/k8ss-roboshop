@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: shipping
 data:
- CART_ENDPOINT=cart: "8080"
- DB_HOST: shipping
+  CART_ENDPOINT: "8080"
+  DB_HOST: "mysql" 
 #  DB_HOST=shipping
 
 
